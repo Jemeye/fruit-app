@@ -1,20 +1,33 @@
-function FruitCard() {
+import PropTypes from 'prop-types';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+function FruitCard({ fruit }) {
 
-
-    return (  
+    return (
         <>
-           <div className="fruit-card">
+            <div className="fruit-card">
                 <div className="fruit-image">
-                    <img src="src\assets\istockphoto-1194235751-612x612.jpg" alt="Fruit"></img>
+                    <LazyLoadImage src={`src/assets/${fruit.name}.jpg`} alt="Fruit"></LazyLoadImage>
                 </div>
                 <div className="fruit-description">
-                    <h2>Fruit name</h2>
-                    <p>This fruit belongs to the family family and its genus is genus</p>
+                    <h2>{fruit.name}</h2>
+                    <p>{`This fruit belongs to the family ${fruit.family}.`}</p>
                     <button>View </button>
-                </div>   
-           </div>
+                </div>
+            </div>
         </>
     );
 }
+
+
+FruitCard.propTypes = {
+    fruit: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired,
+        family: PropTypes.string.isRequired,
+        order: PropTypes.string.isRequired,
+        genus: PropTypes.string.isRequired,
+        nutritions: PropTypes.object.isRequired,
+    }).isRequired,
+};
 
 export default FruitCard;

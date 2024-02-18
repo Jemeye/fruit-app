@@ -265,12 +265,18 @@ main::before {
 
 .fruit-card {
   display: grid;
-  grid-template-columns: 0.4fr 0.6fr;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 1fr;
   width: 100%;
   height: 150px;
   background-color: white;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.fruit-card .fruit-image {
+  width: 100%;
+  height: inherit;
 }
 
 .fruit-card .fruit-image img {
@@ -436,9 +442,13 @@ main::before {
   }
 
   .fruit-card {
-    grid-template-rows: 1fr 0.6fr;
-    grid-template-columns: 1fr;
     height: 450px;
+    grid-template-rows: 60% 40%;
+    grid-template-columns: 1fr;
+  }
+
+  .fruit-card .fruit-image{
+    height: 100%;
   }
 
   .fruit-card .fruit-image img {
