@@ -27,6 +27,22 @@ p {
   color: var(--font-color);
 }
 
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color)
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color)
+}
+
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+
 /* header */
 .header-container {
   position: absolute;
@@ -42,7 +58,7 @@ p {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-bottom: 1px solid var(--background-color);
   background-color: white;
-  z-index: 2;
+  z-index: 3;
 }
 
 .header-container .logo-container {
@@ -118,6 +134,7 @@ p {
   margin-top: 20px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   background-color: white;
+  z-index: 3;
 }
 
 .footer p {
@@ -126,13 +143,13 @@ p {
 }
 
 /* main */
-main{
+main {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
-  padding: 0 10%;
+  /* padding: 0 10%; */
   z-index: 1;
 }
 
@@ -144,11 +161,11 @@ main::before {
   width: 100%;
   height: 100%;
   background-image: url("./assets/istockphoto-1194235751-612x612.jpg");
-  filter: opacity(0.1); 
+  filter: opacity(0.1);
 }
 
 /* login form */
-.form-container .form-content{
+.form-container .form-content {
   display: grid;
   grid-template-rows: 0.1fr 0.9fr;
   gap: 20px;
@@ -156,7 +173,7 @@ main::before {
   z-index: 2;
 }
 
-.form-container .form-content .form-description{
+.form-container .form-content .form-description {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -165,18 +182,18 @@ main::before {
   padding: 5px;
 }
 
-.form-container .form-content .form-description h2{
+.form-container .form-content .form-description h2 {
   font-size: 32px;
   color: var(--primary-color);
 }
 
-.form-container .form-content .form-description p{
+.form-container .form-content .form-description p {
   font-size: 14px;
   color: var(--green);
   font-weight: 500;
 }
 
-.form-container .form-content form{
+.form-container .form-content form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -191,18 +208,18 @@ main::before {
   z-index: 2;
 }
 
-.form-container .form-content div{
+.form-container .form-content div {
   width: 100%;
 }
 
-.form-container .form-content p{
+.form-container .form-content p {
   font-weight: bold;
   color: var(--primary-color);
   margin-bottom: 10px;
 }
 
 
-.form-container .form-content form input{
+.form-container .form-content form input {
   height: 50px;
   width: 100%;
   background-color: transparent;
@@ -213,10 +230,10 @@ main::before {
 }
 
 .form-container .form-content form input::placeholder {
-  color:rgb(165, 165, 165);
+  color: rgb(165, 165, 165);
 }
 
-.form-container .form-content form button{
+.form-container .form-content form button {
   height: 50px;
   width: 100%;
   background-color: var(--primary-color);
@@ -228,13 +245,80 @@ main::before {
   cursor: pointer;
 }
 
-.form-container .form-content form button:hover{
+.form-container .form-content form button:hover {
   background-color: var(--green);
   color: white;
 }
 
+/* fruit list */
+.fruit-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 80px 10% 50px 10%;
+  overflow: scroll;
+  z-index: 2;
+}
+
+.fruit-card {
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  width: 100%;
+  height: 150px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.fruit-card .fruit-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.fruit-card .fruit-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px 15px;
+}
+
+.fruit-card .fruit-description h2 {
+  font-family: "Courgette", cursive;
+  font-size: 18px;
+  color: var(--green);
+  margin-bottom: 4px;
+}
+
+.fruit-card .fruit-description p {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.fruit-card .fruit-description button {
+  font-size: 14px;
+  color: white;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.fruit-card .fruit-description button:hover {
+  background-color: var(--green);
+}
+
+
 /* media queries */
 @media (min-width: 481px) and (max-width: 767px) {
+
   /* header */
   .header-container {
     height: 60px;
@@ -254,13 +338,13 @@ main::before {
   }
 
   /* login */
-  .form-container .form-content{
+  .form-container .form-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
   }
 
-  .form-container .form-content .form-description h2{
+  .form-container .form-content .form-description h2 {
     font-size: 40px;
   }
 
@@ -268,13 +352,35 @@ main::before {
     font-size: 16px;
   }
 
-  .form-container .form-content form input, .form-container .form-content form button{
+  .form-container .form-content form input,
+  .form-container .form-content form button {
     height: 50px;
+  }
+
+  /* fruit list */
+  .fruit-card {
+    height: 200px;
+  }
+
+  .fruit-card .fruit-description h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .fruit-card .fruit-description p {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  .fruit-card .fruit-description button {
+    font-size: 16px;
+    padding: 8px 14px;
   }
 
 }
 
 @media (min-width: 767px) {
+
   /* header */
   .header-container {
     height: 80px;
@@ -294,15 +400,15 @@ main::before {
   }
 
   /* login */
-  .form-container .form-content .form-description h2{
+  .form-container .form-content .form-description h2 {
     font-size: 48px;
   }
-  
-  .form-container .form-content .form-description p{
+
+  .form-container .form-content .form-description p {
     font-size: 18px;
   }
 
-  .form-container .form-content{
+  .form-container .form-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
@@ -310,17 +416,61 @@ main::before {
     height: 400px;
   }
 
-  .form-container .form-content form{
+  .form-container .form-content form {
     gap: 20px;
   }
 
-  .form-container .form-content form input{
+  .form-container .form-content form input {
     height: 60px;
     padding-left: 10px;
   }
 
-  .form-container .form-content form button{
+  .form-container .form-content form button {
     height: 60px;
+  }
+
+  /* fruit list */
+  .fruit-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 100px 10% 70px 10%;
+  }
+
+  .fruit-card {
+    grid-template-rows: 1fr 0.6fr;
+    grid-template-columns: 1fr;
+    height: 450px;
+  }
+
+  .fruit-card .fruit-image img {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 0;
+  }
+
+  .fruit-card .fruit-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
+
+  .fruit-card .fruit-description h2 {
+    font-size: 24px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+  }
+
+  .fruit-card .fruit-description p {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .fruit-card .fruit-description button {
+    font-size: 18px;
+    padding: 6px 24px;
+    margin: 0 auto;
+    margin-bottom: 10px;
   }
 
 }
