@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Login from './pages/login.jsx'
+import NotFound from './pages/not-found.jsx'
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
     element: <Login />,
     errorElement: <div>404 Not Found</div>
   },
+  {
+    path: '*',
+    element: <NotFound />,
+  },
 ]);
 
 
@@ -24,3 +29,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <RouterProvider router={router} />
   </React.StrictMode>,
 )
+
