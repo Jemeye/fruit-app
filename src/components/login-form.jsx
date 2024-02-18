@@ -6,7 +6,18 @@ function LoginForm() {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    
+    const [emailError, setEmailError] = useState("");
+
+    //Function to validate email
+    const validateEmail = (value) => {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(value)) {
+            setEmailError("Please enter a valid email address");
+        } else {
+            setEmailError("");
+        }
+    };
+
     // This function adds a user to the local storage and redirects to the main page
     const login = (e) => {
         e.preventDefault();
@@ -33,11 +44,15 @@ function LoginForm() {
                 <form onSubmit={login}>
                     <div>
                         <p>Email</p>
-                        <input type="email" placeholder="test@example.com" value={email} onChange={(e) => setEmail(e.target.value)} required/>
+                        <input type="email" placeholder="test@example.com" value={email} onChange={(e) => {
+                            validateEmail(e.target.value);
+                            setEmail(e.target.value);
+                        }} required />
+                        {emailError && <p className="error-message">{emailError}</p>}
                     </div>
                     <div>
                         <p>Password</p>
-                        <input type="password" placeholder="*********" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+                        <input type="password" placeholder="*********" value={password} onChange={(e) => setPassword(e.target.value)} required />
                     </div>
                     <button type="submit">Log In</button>
                 </form>
