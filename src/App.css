@@ -58,7 +58,7 @@ p {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-bottom: 1px solid var(--background-color);
   background-color: white;
-  z-index: 3;
+  z-index: 1;
 }
 
 .header-container .logo-container {
@@ -93,7 +93,7 @@ p {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
 .header-container .nav-container .nav-list .nav-item {
@@ -134,7 +134,7 @@ p {
   margin-top: 20px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   background-color: white;
-  z-index: 3;
+  z-index: 1;
 }
 
 .footer p {
@@ -150,7 +150,7 @@ main {
   width: 100vw;
   height: 100vh;
   /* padding: 0 10%; */
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 main::before {
@@ -165,8 +165,8 @@ main::before {
 }
 
 /* login form */
-.form-container{
-padding: 5%;
+.form-container {
+  padding: 5%;
 }
 
 .form-container .form-content {
@@ -197,7 +197,7 @@ padding: 5%;
   font-weight: 500;
 }
 
-.form-container .form-content .error-message{
+.form-container .form-content .error-message {
   color: red;
   font-size: 12px;
   margin-top: 5px;
@@ -261,16 +261,26 @@ padding: 5%;
 }
 
 /* fruit list */
+.fruit-list-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+
+}
+
 .fruit-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  justify-items: center;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 80px 10% 50px 10%;
+  padding: 0 10% 50px 10%;
   overflow: scroll;
-  z-index: 2;
+  z-index: 1;
 }
 
 .fruit-card {
@@ -332,16 +342,17 @@ padding: 5%;
 }
 
 /* fruit modal */
-.fruit-modal{
+.fruit-modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
-.fruit-modal-content{
+.fruit-modal-content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -356,12 +367,12 @@ padding: 5%;
   border-radius: 8px;
 }
 
-.fruit-modal-content .fruit-modal-image{
+.fruit-modal-content .fruit-modal-image {
   width: 100%;
   height: 100%;
 }
 
-.fruit-modal-content .fruit-modal-image img{
+.fruit-modal-content .fruit-modal-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -369,7 +380,7 @@ padding: 5%;
   border-bottom-left-radius: 8px;
 }
 
-.fruit-modal-description{
+.fruit-modal-description {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -377,14 +388,15 @@ padding: 5%;
   padding: 25px;
 }
 
-.fruit-modal-description h2{
+.fruit-modal-description h2 {
   font-family: "Courgette", cursive;
   font-size: 24px;
   color: var(--green);
   font-weight: bold;
 }
 
-.general-info, .general-info--nutritions{
+.general-info,
+.general-info--nutritions {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -392,7 +404,7 @@ padding: 5%;
   margin: 5px 0px;
 }
 
-.general-info--nutritions div{
+.general-info--nutritions div {
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
@@ -401,17 +413,18 @@ padding: 5%;
   font-size: 14px
 }
 
-.general-info p{
+.general-info p {
   font-size: 14px
 }
 
-.general-info span, .general-info--nutritions > p{
+.general-info span,
+.general-info--nutritions>p {
   font-weight: bold;
   color: var(--green);
   font-size: 14px
 }
 
-.close-button{
+.close-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -429,12 +442,68 @@ padding: 5%;
   cursor: pointer;
 }
 
-.close-button:hover{
+.close-button:hover {
   background-color: var(--green);
   color: white;
   border-color: var(--green);
 }
 
+.search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+  z-index: 1;
+  padding-bottom: 20px;
+}
+
+.search form{
+  position: relative;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary-color);
+  font-size: 20px;
+}
+
+.search form button{
+ position: absolute;
+ right: 0;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 45px;
+ width: 50px;
+ border-top-right-radius: 8px;
+ border-bottom-right-radius: 8px;
+ border: 1px solid var(--primary-color);
+ background-color: #a7c957;
+ cursor: pointer;
+ font-size: 18px;
+}
+
+.search form button:hover{
+  border: 1px solid var(--green);
+  background-color: var(--green);
+
+ }
+
+.search form input{
+  height: 45px;
+  width: 100%;
+  background-color: white;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  padding-left: 8px;
+  color: var(--green);
+}
+
+.search form input::placeholder {
+  color: rgb(165, 165, 165);
+}
 
 /* media queries */
 @media (min-width: 481px) and (max-width: 767px) {
@@ -497,27 +566,31 @@ padding: 5%;
     padding: 8px 14px;
   }
 
-  .fruit-modal-content{
+  .fruit-modal-content {
     grid-template-columns: 45% 55%;
     height: 60%;
   }
 
-  .fruit-modal-description h2{
+  .fruit-modal-description h2 {
     font-size: 32px;
   }
 
-  .fruit-modal-description p{
+  .fruit-modal-description p {
     font-size: 14px;
   }
 
-  .fruit-modal-description{
+  .fruit-modal-description {
     justify-content: space-evenly;
   }
 
-  .close-button{
+  .close-button {
     width: 35px;
     height: 35px;
     font-size: 23px;
+  }
+
+  .search form{
+    width: 50%;
   }
 
 }
@@ -574,8 +647,13 @@ padding: 5%;
 
   /* fruit list */
   .fruit-list {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    padding: 100px 10% 70px 10%;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+  
+  }
+
+  .fruit-list-container {
+    padding-top: 100px;
+
   }
 
   .fruit-card {
@@ -584,7 +662,7 @@ padding: 5%;
     grid-template-columns: 1fr;
   }
 
-  .fruit-card .fruit-image{
+  .fruit-card .fruit-image {
     height: 100%;
   }
 
@@ -621,32 +699,40 @@ padding: 5%;
   }
 
   /* modal */
-  .fruit-modal-content{
+  .fruit-modal-content {
     width: 50%;
     grid-template-columns: 45% 55%;
     height: 60%;
   }
 
-  .fruit-modal-description{
+  .fruit-modal-description {
     justify-content: center;
   }
 
-  .fruit-modal-description h2{
+  .fruit-modal-description h2 {
     margin-bottom: 10px;
     font-size: 34px;
   }
 
-  .general-info--nutritions div, .general-info span, .general-info--nutritions > p,  .general-info p {
+  .general-info--nutritions div,
+  .general-info span,
+  .general-info--nutritions>p,
+  .general-info p {
     font-size: 16px
   }
-  
+
+  .search form{
+    width: 50%;
+  }
+
 }
 
 @media (min-width: 1600px) {
-  .fruit-modal-content .fruit-modal-image{
+  .fruit-modal-content .fruit-modal-image {
     height: inherit;
   }
-  .fruit-modal-content{
+
+  .fruit-modal-content {
     height: 500px;
   }
 }

@@ -1,9 +1,13 @@
 import { useState } from "react";
 import FruitCard from "./fruit-card";
+import { FaSearch } from "react-icons/fa";
+
 
 function FruitList() {
 
     const [fruit, setFruit] = useState([]);
+    const [currentFruit, setCurrentFruit] = useState([]);
+    const [query, setQuery] = useState([]);
 
     // Function to fetch fruit data asynchronously from a mock API endpoint
     const fetchData = async () => {
@@ -11,10 +15,24 @@ function FruitList() {
             .then(response => response.json())
             .then(data => {
                 setFruit(data);
+                setCurrentFruit(data);
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
+    };
+
+    // Function to search for a fruit
+    const searchFruit = (e) => {
+        e.preventDefault();
+        console.log(query)
+        if(query) {
+            setCurrentFruit(fruit.filter(
+                    (element) => element.name.toLowerCase().includes(query.toLowerCase()) || element.family.toLowerCase().includes(query.toLowerCase())
+                ));
+        } else {
+            setCurrentFruit(fruit);
+        }
     };
 
     useState(() => {
@@ -22,13 +40,19 @@ function FruitList() {
     }, []);
 
     return (
-        <>
+        <div className="fruit-list-container">
+            <div className="search">
+                <form onSubmit={searchFruit}> 
+                    <input type="text" placeholder="Search..." value={query} onChange={(e) => setQuery(e.target.value)}/>
+                    <button type="submit"><FaSearch></FaSearch></button>
+                </form>
+            </div>
             <div className="fruit-list">
-                {fruit.map(( element, index) => (
+                {currentFruit.map(( element, index) => (
                     <FruitCard key={index} fruit={element} />
                 ))}
             </div>
-        </>
+        </div>
     );
 }
 

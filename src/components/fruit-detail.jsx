@@ -28,7 +28,6 @@ function FruitDetail({ isOpen, onClose, fruit }) {
         <>
             <div className="fruit-modal">
                 <div className="fruit-modal-content">
-
                     <div className="fruit-modal-image">
                         <img src={`/${fruit.name}.jpg`} alt="Fruit"></img>
                     </div>

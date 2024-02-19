@@ -1,4 +1,4 @@
-import { FaSearch, FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
+import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -26,7 +26,6 @@ function Header() {
             </Link>
             <nav className="nav-container">
                 <ul className="nav-list">
-                    <li className="nav-item"><FaSearch></FaSearch></li>
                     <button onClick={logOut}>
                         <li className="nav-item">
                             { isAuthenticated ? <FaSignOutAlt></FaSignOutAlt> : <FaSignInAlt></FaSignInAlt> }
