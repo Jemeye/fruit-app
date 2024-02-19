@@ -1,7 +1,7 @@
+import React from 'react';
 import { useState } from "react";
 import FruitCard from "./fruit-card";
 import { FaSearch } from "react-icons/fa";
-
 
 function FruitList() {
 

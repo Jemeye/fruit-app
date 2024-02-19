@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fruit Card should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="fruit-card"
+  >
+    <div
+      class="fruit-image"
+    >
+      <img
+        alt="Fruit"
+        src="   /Apple.jpg"
+      />
+    </div>
+    <div
+      class="fruit-description"
+    >
+      <h2>
+        Apple
+      </h2>
+      <p>
+        This fruit belongs to the family Rosaceae.
+      </p>
+      <button>
+        View 
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

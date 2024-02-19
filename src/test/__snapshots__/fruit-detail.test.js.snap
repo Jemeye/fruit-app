@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fruit Card should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="fruit-card"
+  >
+    <div
+      class="fruit-image"
+    >
+      <img
+        alt="Fruit"
+        src="   /Apple.jpg"
+      />
+    </div>
+    <div
+      class="fruit-description"
+    >
+      <h2>
+        Apple
+      </h2>
+      <p>
+        This fruit belongs to the family Rosaceae.
+      </p>
+      <button>
+        View 
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Fruit Detail should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="fruit-modal"
+  >
+    <div
+      class="fruit-modal-content"
+    >
+      <div
+        class="fruit-modal-image"
+      >
+        <img
+          alt="Fruit"
+          src="/Apple.jpg"
+        />
+      </div>
+      <div
+        class="fruit-modal-description"
+      >
+        <h2>
+          Apple
+        </h2>
+        <div
+          class="general-info"
+        >
+          <p>
+            <span>
+              Family: 
+            </span>
+            Rosaceae
+          </p>
+          <p>
+            <span>
+              Order: 
+            </span>
+            Rosids
+          </p>
+          <p>
+            <span>
+              Genus: 
+            </span>
+            Malus
+          </p>
+        </div>
+        <div
+          class="general-info--nutritions"
+        >
+          <p>
+            Nutritions:
+          </p>
+          <div>
+            <p>
+              <span>
+                Calories: 
+              </span>
+              52
+            </p>
+            <p>
+              <span>
+                Fat: 
+              </span>
+              0.1
+            </p>
+            <p>
+              <span>
+                Protein: 
+              </span>
+              0.3
+            </p>
+            <p>
+              <span>
+                Sugar: 
+              </span>
+              10
+            </p>
+            <p>
+              <span>
+                Carbohydrates: 
+              </span>
+              10
+            </p>
+          </div>
+        </div>
+        <button
+          class="close-button"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 352 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
