@@ -14,4 +14,5 @@ El proyecto es una aplicación web que ofrece la posibilidad de explorar una var
 - Buscar frutas: la aplicación web incluye un buscador que le permite al usuario buscar frutas por nombre y familia.
 
 ## API
-- Se simuló una API REST con la ayuda de Mock y Postman, la cual arroja información sobre frutas. La URL usada para la petición HTTP fue: https://2c3d4167-aaff-4fdf-ac62-6956081d0f21.mock.pstmn.io/fruits
+- Se implementó una simulación de una API REST utilizando Mock y Postman para proporcionar datos sobre frutas. La dirección URL utilizada para realizar la solicitud HTTP fue: https://2c3d4167-aaff-4fdf-ac62-6956081d0f21.mock.pstmn.io/fruits.
+- Esta API simulada devuelve datos estructurados sobre diferentes frutas, incluyendo detalles como el nombre de la fruta, su familia botánica, su orden taxonómico, su género y sus valores nutricionales.
