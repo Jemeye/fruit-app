@@ -13,3 +13,5 @@ El proyecto es una aplicación web que ofrece la posibilidad de explorar una var
 - Ver información detallada de una fruta: la aplicación web le permite al usuario visualizar la informacion detalalda de una fruta, información que mostrada en un modal.
 - Buscar frutas: la aplicación web incluye un buscador que le permite al usuario buscar frutas por nombre y familia.
 
+## API
+- Se simuló una API REST con la ayuda de Mock y Postman, la cual arroja información sobre frutas. La URL usada para la petición HTTP fue: https://2c3d4167-aaff-4fdf-ac62-6956081d0f21.mock.pstmn.io/fruits
