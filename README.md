@@ -26,3 +26,16 @@ El proyecto es una aplicación web que ofrece la posibilidad de explorar una var
 - Una vez iniciada la sesión, podrás explorar la lista completa de frutas disponibles.
 - Es posible dar clic en cualquier fruta de la lista para acceder a información detallada sobre ella. Esto mostrará datos relevantes, como el nombre de la fruta, su familia, orden y género, así como información nutricional.
 - Es posible usar la función de búsqueda para encontrar una fruta específica. Ingresando el nombre de la fruta en el campo de búsqueda la aplicación filtrará automáticamente la lista para mostrar coincidencias.
+
+## Pruebas
+- Se diseñó una prueba para verificar que el componente FruitList se renderice correctamente, asegurando que se muestre al menos una fruta (en este caso, "Apple").
+- Se diseñó una prueba para verificar que el filtro de búsqueda funcione correctamente al ingresar el nombre de una fruta en el campo de búsqueda y realizar la búsqueda. En este caso, se espera que al buscar "Apple", se muestre la fruta correspondiente en la lista de frutas.
+- Se diseñó una prueba para verificar que el componente FruitDetail se renderice correctamente con la información de una fruta proporcionada. Se utiliza la función toMatchSnapshot para asegurarse de que el componente se renderice como se espera.
+- Se diseñó una prueba para asegurar que todos los elementos y la información de la fruta se muestren correctamente en la página, en el componente FruitDetail. Se verifica la presencia de elementos como el nombre de la fruta, la familia, el orden, el género y los valores nutricionales como calorías, grasa, proteínas, azúcar y carbohidratos. Si todos estos elementos se encuentran en la página
+- Se diseñó una prueba para verifica que el componente FruitCard se renderice correctamente con la información de una fruta proporcionada. Se utiliza la función toMatchSnapshot para comparar la representación del componente con una instantánea previamente guardada.
+- Se diseñó una prueba para asegurar asegura de que el componente FruitCard muestre correctamente la información de la fruta en la página. Se verifican elementos como el nombre de la fruta y la familia. Si estos elementos se encuentran en la página, la prueba pasa con éxito.
+
+
+
+
+
